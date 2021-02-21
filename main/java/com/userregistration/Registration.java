@@ -5,7 +5,7 @@ public class Registration {
     public static final String NAME_PATTERN = "[A-Z][a-z]{3,}";
     public static final String EMAIL_PATTERN ="[a-z\\+\\-\\_\\.a-z0-9]{3,}\\@[a-z]*\\.[a-z]{1,3}\\.[a-z]{2,3}";
     public static final String MOBILE_NUMBER_PATTERN = "(\\+91)?[6-9]{1}[0-9]{9}";
-    public static final String PASSWORD_RULE2_PATTERN = "(?=.*[A-Z])[a-zA-Z]{8,}";
+    public static final String PASSWORD_RULE3_PATTERN = "(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]{8,}";
     public boolean firstNameValidation(String firstName){
         Pattern pattern = Pattern.compile(NAME_PATTERN);
         return pattern.matcher(firstName).matches();
@@ -23,7 +23,7 @@ public class Registration {
         return pattern.matcher(number).matches();
     }
     public boolean passwordRuleValidation(String password){
-        Pattern pattern = Pattern.compile(PASSWORD_RULE2_PATTERN);
+        Pattern pattern = Pattern.compile(PASSWORD_RULE3_PATTERN);
         return pattern.matcher(password).matches();
     }
 }

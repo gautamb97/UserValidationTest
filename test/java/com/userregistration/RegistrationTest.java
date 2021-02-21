@@ -54,7 +54,7 @@ public class RegistrationTest {
     @Test
     public void givenPasswordRule_WhenProper_ShouldReturnTrue(){
         Registration validation = new Registration();
-        boolean password = validation.passwordRuleValidation("Abcdefgh");
+        boolean password = validation.passwordRuleValidation("A1cdefgh");
         Assertions.assertEquals(true,password);
     }
     @Test
