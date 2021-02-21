@@ -52,15 +52,15 @@ public class RegistrationTest {
         Assertions.assertEquals(false,mobileNumber);
     }
     @Test
-    public void givenPasswordRule1_WhenProper_ShouldReturnTrue(){
+    public void givenPasswordRule_WhenProper_ShouldReturnTrue(){
         Registration validation = new Registration();
-        boolean password = validation.passwordRuleOneValidation("abcdefgh");
+        boolean password = validation.passwordRuleValidation("Abcdefgh");
         Assertions.assertEquals(true,password);
     }
     @Test
-    public void givenPasswordRule1_WhenNotProper_ShouldReturnFalse(){
+    public void givenPasswordRule_WhenNotProper_ShouldReturnFalse(){
         Registration validation = new Registration();
-        boolean password = validation.mobileNumberValidation("abcnd");
+        boolean password = validation.passwordRuleValidation("abcnd");
         Assertions.assertEquals(false,password);
     }
 }
