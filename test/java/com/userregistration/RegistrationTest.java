@@ -51,4 +51,16 @@ public class RegistrationTest {
         boolean mobileNumber = validation.mobileNumberValidation("87908765");
         Assertions.assertEquals(false,mobileNumber);
     }
+    @Test
+    public void givenPasswordRule1_WhenProper_ShouldReturnTrue(){
+        Registration validation = new Registration();
+        boolean password = validation.passwordRuleOneValidation("abcdefgh");
+        Assertions.assertEquals(true,password);
+    }
+    @Test
+    public void givenPasswordRule1_WhenNotProper_ShouldReturnFalse(){
+        Registration validation = new Registration();
+        boolean password = validation.mobileNumberValidation("abcnd");
+        Assertions.assertEquals(false,password);
+    }
 }
