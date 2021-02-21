@@ -7,4 +7,8 @@ public class Registration {
         Pattern pattern = Pattern.compile(NAME_PATTERN);
         return pattern.matcher(firstName).matches();
     }
+    public boolean lastNameValidation(String lastName){
+        Pattern pattern = Pattern.compile(NAME_PATTERN);
+        return pattern.matcher(lastName).matches();
+    }
 }

@@ -21,4 +21,22 @@ public class RegistrationTest {
         boolean firstName = validation.firstNameValidation("Ga");
         Assertions.assertEquals(false,firstName);
     }
+    @Test
+    public void givenLastName_WhenProper_ShouldReturnTrue(){
+        Registration validation = new Registration();
+        boolean lastName = validation.firstNameValidation("Biswal");
+        Assertions.assertEquals(true,lastName);
+    }
+    @Test
+    public void givenLastName_WhenNotProper_ShouldReturnFalse(){
+        Registration validation = new Registration();
+        boolean lastName = validation.lastNameValidation("biswal");
+        Assertions.assertEquals(false,lastName);
+    }
+    @Test
+    public void givenLastName_WhenNotProper_LessThanThreeChar_ShouldReturnFalse(){
+        Registration validation = new Registration();
+        boolean lastName = validation.lastNameValidation("Bi");
+        Assertions.assertEquals(false,lastName);
+    }
 }
