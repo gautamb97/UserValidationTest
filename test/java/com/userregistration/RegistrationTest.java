@@ -39,4 +39,16 @@ public class RegistrationTest {
         boolean lastName = validation.lastNameValidation("Bi");
         Assertions.assertEquals(false,lastName);
     }
+    @Test
+    public void givenMobileNumber_WhenProper_ShouldReturnTrue(){
+        Registration validation = new Registration();
+        boolean mobileNumber = validation.mobileNumberValidation("+919754321234");
+        Assertions.assertEquals(true,mobileNumber);
+    }
+    @Test
+    public void givenMobileNumber_WhenNotProper_ShouldReturnFalse(){
+        Registration validation = new Registration();
+        boolean mobileNumber = validation.mobileNumberValidation("87908765");
+        Assertions.assertEquals(false,mobileNumber);
+    }
 }
