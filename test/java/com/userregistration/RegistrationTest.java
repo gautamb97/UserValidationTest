@@ -54,13 +54,13 @@ public class RegistrationTest {
     @Test
     public void givenPasswordRule_WhenProper_ShouldReturnTrue(){
         Registration validation = new Registration();
-        boolean password = validation.passwordRuleValidation("A1cdefgh");
+        boolean password = validation.passwordRuleValidation("A1#cdefgh");
         Assertions.assertEquals(true,password);
     }
     @Test
     public void givenPasswordRule_WhenNotProper_ShouldReturnFalse(){
         Registration validation = new Registration();
-        boolean password = validation.passwordRuleValidation("abcnd");
+        boolean password = validation.passwordRuleValidation("ab1Cnd");
         Assertions.assertEquals(false,password);
     }
 }
