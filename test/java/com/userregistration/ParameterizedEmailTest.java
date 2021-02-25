@@ -27,13 +27,23 @@ public class ParameterizedEmailTest {
     @Test
     public void givenSampleEmails_WhenProper_ShouldReturnTrue(){
         Registration validation = new Registration();
-        boolean emailVerification = validation.emailValidation(this.emailVerifying);
+        boolean emailVerification = false;
+        try {
+            emailVerification = validation.emailValidation(this.emailVerifying);
+        } catch (UserValidationException e) {
+            e.printStackTrace();
+        }
         Assert.assertEquals(this.expectedResult,emailVerification);
     }
     @Test
     public void givenSampleEmails_WhenNotProper_ShouldReturnFalse(){
         Registration validation = new Registration();
-        boolean emailVerification = validation.emailValidation(this.emailVerifying);
+        boolean emailVerification = false;
+        try {
+            emailVerification = validation.emailValidation(this.emailVerifying);
+        } catch (UserValidationException e) {
+            e.printStackTrace();
+        }
         Assert.assertEquals(this.expectedResult,emailVerification);
     }
 }
